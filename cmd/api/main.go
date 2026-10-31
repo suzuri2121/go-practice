@@ -14,9 +14,6 @@ import (
 
 func main() {
 	dsn := os.Getenv("DATABASE_URL")
-	if dsn == "" {
-		dsn = "postgres://app:app@localhost:5432/shop?sslmode=disable"
-	}
 
 	ctx := context.Background()
 	pool, err := pgxpool.New(ctx, dsn)
